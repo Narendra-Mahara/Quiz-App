@@ -23,7 +23,7 @@ A modern, responsive quiz application built with React and Vite.
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/quiz-app.git
+   git clone https://github.com/Narendra-Mahara/Quiz-App.git
    cd quiz-app
    ```
 2. Install dependencies:
