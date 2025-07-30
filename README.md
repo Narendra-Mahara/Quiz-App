@@ -1,12 +1,60 @@
-# React + Vite
+# Quiz App 📝
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A modern, responsive quiz application built with React and Vite.
 
-Currently, two official plugins are available:
+## Features ✨
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🗂️ Choose quiz category, difficulty, and number of questions
+- 🌐 Fetches questions from [quizapi.io](https://quizapi.io/)
+- 📝 Multiple choice questions with dynamic answer rendering
+- ✅ Tracks user answers and prevents skipping questions
+- 🏆 Shows score and detailed review at the end
+- 📱 Responsive, clean UI with Tailwind CSS
+- ⚛️ Navigation and state management with React Context and React Router
 
-## Expanding the ESLint configuration
+## Getting Started 🚀
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- 🟢 Node.js (v16+ recommended)
+-  yarn
+
+### Setup 🛠️
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/quiz-app.git
+   cd quiz-app
+   ```
+2. Install dependencies:
+   ```
+   yarn
+   ```
+3. Create a `.env` file in the root directory and add your QuizAPI key:
+
+   ```env
+   VITE_QUIZZ_KEY=your_api_key_here
+   ```
+
+   You can get a free API key from [quizapi.io](https://quizapi.io/).
+
+4. Start the development server:
+
+   ```bash
+
+   yarn dev
+   ```
+
+5. Open [http://localhost:5173](http://localhost:5173) in your browser. 🌍
+
+## Usage 🧑‍💻
+
+1. 🗂️ Select your desired quiz category, difficulty, and number of questions.
+2. ▶️ Click **Start Quiz** to begin.
+3. ✍️ Answer each question. You cannot proceed without selecting an answer.
+4. 🏁 At the end, view your score and review each question with correct/incorrect highlights.
+5. 🔄 Click **Try Again** to start a new quiz.
+
+## License 📄
+
+This project is licensed under the [MIT License](LICENSE).
