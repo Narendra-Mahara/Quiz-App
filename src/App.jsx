@@ -8,18 +8,35 @@ const App = () => {
   const [category, setCategory] = useState("linux");
   const [difficulty, setDifficulty] = useState("Easy");
   const [noOfQuestions, setNoOfQuestions] = useState(10);
+  const [error, setError] = useState(false);
+  const [errorMessage, setErrorMessage] = useState(
+    "Something went wrong, please try again later."
+  );
   const navigate = useNavigate();
   const fetchQuestion = async () => {
-    const res = await axios.get(
-      `https://quizapi.io/api/v1/questions?apiKey=${
-        import.meta.env.VITE_QUIZZ_KEY
-      }&category=${category}&difficulty=${difficulty}&limit=${noOfQuestions}`
-    );
-    setData(res.data);
-    navigate("/quiz");
+    try {
+      const res = await axios.get(
+        `https://quizapi.io/api/v1/questions?apiKey=${
+          import.meta.env.VITE_QUIZZ_KEY
+        }&category=${category}&difficulty=${difficulty}&limit=${noOfQuestions}`
+      );
+      setData(res.data);
+      navigate("/quiz");
+    } catch (error) {
+      setErrorMessage(error.message);
+      setError(true);
+      setTimeout(() => {
+        setError(false);
+      }, 2000);
+    }
   };
   return (
     <div className="min-h-svh flex flex-col bg-[#030712] p-2 md:p-5">
+      {error && (
+        <div className="bg-red-500 text-white p-2 rounded-lg mb-4">
+          <p className="text-center">{errorMessage}</p>
+        </div>
+      )}
       <nav className="p-2 md:p-5 text-center">
         <a className="w-fit inline-block" href="/">
           {" "}
